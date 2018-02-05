@@ -141,20 +141,20 @@ function willGuestLikeMeal(playerMealArray) {
 
 	}
 	if ( randomNumber ===  4  ||  randomNumber === 5 || randomNumber === 6 ) {
-		alert("your eightball said " + eightBall + " Not so Good is it - add 10 mins to your cooking time");
+		alert("your eightball said " + eightBall + " Not so Good is it. Add 10 mins to your cooking time");
 		playerMealArray[1] += 10;
 		playerMealArray[1] -= 15;
 		return playerMealArray;
 
 	}
 	else if( randomNumber === 0 || randomNumber === 1 || randomNumber === 7 ){
-		alert("Good News your eightball said " + eightBall + " so you get a  10 mins bonus for being a great chef.");
+		alert("Good News your eightball said " + eightBall + "  you get a 10 mins bonus for being a great chef.");
 		playerMealArray[1] -= 10;
 		playerMealArray[1] -= 15
 		return playerMealArray;
 	}
 	else
-		alert("The eightball said:" + eightBall + " you don't lose or gain anytime with that answer");
+		alert("The eightball said: " + eightBall + " you don't lose or gain anytime with that answer");
 		playerMealArray[1] -=15;
 
 		return playerMealArray;
@@ -176,7 +176,7 @@ function willGuestLikeMeal(playerMealArray) {
 					alert("Even tho you did not make the meal in time - I still loved the food, Nice Work");
 				}
 				else
-					alert("Chef - Your food is the tastes like the horses ass -I am out of here!!")
+					alert("Chef - Your food tastes like the horses ass - I am out of here!!")
 		}	
 				else alert("Chef You are the best your food is the Greatest. ");
 }
@@ -195,8 +195,8 @@ let playerMealArray = createPlayerMeals(playerArray);
 alertPlayerTheirMeal(playerMealArray);
 checkForBritish(playerMealArray);
 for (var i = 0; i <= 2; i++) { // make this into a function
-	willGuestLikeMeal(playerMealArray);
-	informPlayersOfScore(playerMealArray);
+	willGuestLikeMeal(playerMealArray);//
+	informPlayersOfScore(playerMealArray);//
 }
 didYouHaveTime(playerMealArray);
 finalChanceToImpress(playerMealArray);
