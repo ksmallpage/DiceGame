@@ -6,10 +6,8 @@ function setupPlayer(){
 	let playerArray = [];
 	let playerInitialscorce = 45;
 	
-
 	playerArray.push(playerOne);
 	playerArray.push(playerInitialscorce);
-
 
 	alert ("Welcome " + playerOne +" try and beat the clock!!!!");
 	return playerArray;
@@ -166,8 +164,22 @@ function willGuestLikeMeal(playerMealArray) {
 		if (playerMealArray[1] <=0) {
 			alert("You Made it - EnJoy the meal!!!!!");
 		}else
-			alert("You ran out of time - try again");
+			alert("You ran out of time - your guest is on the fence about your skills");
+			return playerMealArray;
 	}
+
+	function finalChanceToImpress(playerMealArray){
+		if(playerMealArray[1] >0){
+			alert(" Well you did not made the meal in time but maybe your guest will still come back.");
+			let randomNumber = Math.floor(Math.random()* 2);
+				if (randomNumber === 0){
+					alert("Even tho you did not make the meal in time - I still loved the food");
+				}
+				else
+					alert("Chef - Your food is the tastes like the horses ass -I am out of here!!")
+		}	
+				else alert("Chef You are the best your food is the Greatest. ");
+}
 
 
 
@@ -187,6 +199,7 @@ for (var i = 0; i <= 2; i++) { // make this into a function
 	informPlayersOfScore(playerMealArray);
 }
 didYouHaveTime(playerMealArray);
+finalChanceToImpress(playerMealArray);
 }
 
 runGame();
