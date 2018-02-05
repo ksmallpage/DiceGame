@@ -3,22 +3,18 @@
 function setupPlayer(){
 
 	let playerOne = prompt ("Who is cooking today?");
-	//let playerTwo = prompt ("Who is your cook off Challenger today?");
 	let playerArray = [];
 	let playerInitialscorce = 45;
 	
-	//add the player to the array
 
 	playerArray.push(playerOne);
 	playerArray.push(playerInitialscorce);
-	//playerArray.push(playerTwo);
-	//playerArray.push(playerInitialscorce);
+
 
 	alert ("Welcome " + playerOne +" try and beat the clock!!!!");
 	return playerArray;
 }
 
-// create a function to generte a random number
 
 function TrowDice(dice){
 	let randomNumber = Math.floor(Math.random()* dice);
@@ -26,31 +22,24 @@ function TrowDice(dice){
 
 }
 
-// create a function to create a meal 
 function createPlayerMeals(playerArray){
-    // create a mealplan array variable
+
     let playerMealArray = [];
-     // set variable for players
      let playersDetails = playerArray;
 
      let playerOne = playersDetails[0];
      let playerOneScore =playersDetails[1];
-    // let playerTwo = playersDetails[2];
-    // let playerTwoScore = playersDetails[3];
 
-     // create the variables // arrays for the dice;
-    // 4 Dice
-    let strachArray = ["Rice", "Pasta", "Spuds", "Beans"];
-    // 6 Dice
+    let strachArray = ["Rice", "Pasta", "Potatoes", "Beans"];
+
      let mealArray = ["Indian", "Italian", "French", "Chinese", "British", "Mexican"];
-    // 6 Dice testing
+    // 6 Dice testing for British
     //let mealArray = ["British", "British", "British", "British", "British", "British"];
-    // 8 Dice
+
     let proteinArray = ["Salmon", "Beef", "Chicken", "Pork", "Tofu", "Lamb", "Shrimp", "Turkey"];
-    // 10 Dice
+
     let techniqueArray = ["Boiled", "Barbecued", "Cassoled", "Braised", "Fried", "Grilled", "Poached", "Steamed", "Sauted", "Roast"];
 
-    // 12 Dice
     let vegetablesArray = ["Asparagrus", "Kale", "Eggplant", "Turnip", "Green Beans", "Cabbage", "Zucchini", "Leek", "Pepper", "Brussel Sprouts", "Spinach", "Broccolini"];
 
 				playerMealArray.push(playerOne);
@@ -84,7 +73,6 @@ function createPlayerMeals(playerArray){
     	 }
 
  
-       // return playerMealArray;
 function alertPlayerTheirMeal(playerMealArray){
 
 
@@ -92,7 +80,7 @@ function alertPlayerTheirMeal(playerMealArray){
  alert( playerMealArray[0] + " Your challenge is to make a " + playerMealArray[3] + " " + playerMealArray[2] + " dish which includes " + playerMealArray[4] + ", " + playerMealArray[5] + " and " + playerMealArray[6] + "!!!!" );
  
 
- alert ("You have 45 Mins to make your meal before your guest arrives in an hour -- but be aware stuff happens ");
+ alert ("You have 45 Mins to make your meal before your guest arrives in an hour. Your progress will be checked every 15 mins to see how you are doing. ");
 
  return playerMealArray;
 }
@@ -114,59 +102,61 @@ function checkForBritish(playerMealArray){
 }
 
 function informPlayersOfScore(playerMealArray){
-	alert(playerMealArray[0] + " You will now need " + playerMealArray[1] + " Mins to complete your dish");
+	alert(playerMealArray[0] + " You will need " + playerMealArray[1] + " Mins to fully complete your dish");
 
 }
 
 
 function willGuestLikeMeal(playerMealArray) {
 
-	let randomNumber = Math.floor(Math.random()* 7);
-	let eightBall = '';		
-	let playerQuestion = alert(playerMealArray[0] + "15 Mins have passed based on what you have compeleted so far let's find out if your eightball will like the dish?");
+	
+	let eightBall = '';	
+	let randomNumber = Math.floor(Math.random()* 7);	
+	let playerQuestion = alert(playerMealArray[0] + "15 Mins Check !!! Based on what you have compeleted so far let's find out if your guest is going to like the meal. We will use an eightball to find out.");
 	switch(randomNumber) {
 	  case 0:
-	  eightBall = 'It is certain';// DO Nothing
+	  eightBall = 'It is certain';
 	  break;
 	  case 1:
-	  eightBall = 'Is is decidedly so'; // -10 from score
+	  eightBall = 'Is is decidedly so'; 
 	  break;
 	  case 2:
-	  eightBall = 'Reply hazy on this one'; // do nothing
+	  eightBall = 'Reply hazy on this one';
 	  break; 
 	  case 3:
-	  eightBall = 'Cannot predict now'; // do nothing
+	  eightBall = 'Cannot predict now'; 
 	  break; 
 	  case 4:
-	  eightBall = 'Don\'t count on it'; // add 10 mns to score
+	  eightBall = 'Don\'t count on it';
 	  break; 
 	  case 5:
-	  eightBall =  'My sources say no'; // add 10 mins to score
+	  eightBall =  'My sources say no'; 
 	  break;
 	  case 6:
-	  eightBall = 'Outlook not so good'; // add 10 mins to score
+	  eightBall = 'Outlook not so good'; 
 	  break;
 	  case 7:
-	  eightBall = 'Signs point to yes'; // - 10 mins from score
+	  eightBall = 'Signs point to yes';
 	  break;
 	  default:
 	  eightBall ="whatever"; 
 
 	}
 	if (randomNumber == (4 || 5 || 6)) {
-		alert("your eightball said " + eightBall + " you need to add 10 mins to your cooking time");
+		alert("your eightball said " + eightBall + " Not so Good is it - add 10 mins to your cooking time");
 		playerMealArray[1] += 10;
 		playerMealArray[1] -= 15;
 		return playerMealArray;
 
 	}
 	else if(randomNumber == (1 || 7)){
-		alert("Good News your eightball said " + eightBall + " you have gained 10 mins for doing a great job");
+		alert("Good News your eightball said " + eightBall + " so you get a  10 mins bonus for being a great chef.");
 		playerMealArray[1] -= 10;
 		playerMealArray[1] -= 15
 		return playerMealArray;
 	}
-		alert("The eight ball said:" + eightBall + " you don't lose or gain anytime with that answer");
+	else
+		alert("The eightball said:" + eightBall + " you don't lose or gain anytime with that answer");
 		playerMealArray[1] -=15;
 
 		return playerMealArray;
@@ -174,7 +164,7 @@ function willGuestLikeMeal(playerMealArray) {
 
 	function didYouHaveTime(playerMealArray){
 		if (playerMealArray[1] <=0) {
-			alert("You did well your guest will be very happy");
+			alert("You Made it - EnJoy the meal!!!!!");
 		}else
 			alert("You ran out of time - try again");
 	}
@@ -192,7 +182,7 @@ let playerArray = setupPlayer();
 let playerMealArray = createPlayerMeals(playerArray);
 alertPlayerTheirMeal(playerMealArray);
 checkForBritish(playerMealArray);
-for (var i = 0; i <= 2; i++) {
+for (var i = 0; i <= 2; i++) { // make this into a function
 	willGuestLikeMeal(playerMealArray);
 	informPlayersOfScore(playerMealArray);
 }
