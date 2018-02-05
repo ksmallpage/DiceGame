@@ -140,14 +140,14 @@ function willGuestLikeMeal(playerMealArray) {
 	  eightBall ="whatever"; 
 
 	}
-	if (Number(randomNumber) === (Number(4) || Number(5) || Number(6))) {
+	if (Number(randomNumber) == ( 4 || 5 || 6 )) {
 		alert("your eightball said " + eightBall + " Not so Good is it - add 10 mins to your cooking time");
 		playerMealArray[1] += 10;
 		playerMealArray[1] -= 15;
 		return playerMealArray;
 
 	}
-	else if(Number(randomNumber) === (Number(0)|| Number(1) || Number(7))){
+	else if(Number(randomNumber) == ( 0 || 1 || 7 )){
 		alert("Good News your eightball said " + eightBall + " so you get a  10 mins bonus for being a great chef.");
 		playerMealArray[1] -= 10;
 		playerMealArray[1] -= 15
@@ -173,7 +173,7 @@ function willGuestLikeMeal(playerMealArray) {
 			alert(" Well you did not made the meal in time but maybe your guest will still come back.");
 			let randomNumber = Math.floor(Math.random()* 2);
 				if (randomNumber === 0){
-					alert("Even tho you did not make the meal in time - I still loved the food");
+					alert("Even tho you did not make the meal in time - I still loved the food, Nice Work");
 				}
 				else
 					alert("Chef - Your food is the tastes like the horses ass -I am out of here!!")
