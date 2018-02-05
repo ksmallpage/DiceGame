@@ -140,14 +140,14 @@ function willGuestLikeMeal(playerMealArray) {
 	  eightBall ="whatever"; 
 
 	}
-	if (Number(randomNumber) == ( 4 || 5 || 6 )) {
+	if ( randomNumber ===  4  ||  randomNumber === 5 || randomNumber === 6 ) {
 		alert("your eightball said " + eightBall + " Not so Good is it - add 10 mins to your cooking time");
 		playerMealArray[1] += 10;
 		playerMealArray[1] -= 15;
 		return playerMealArray;
 
 	}
-	else if(Number(randomNumber) == ( 0 || 1 || 7 )){
+	else if( randomNumber === 0 || randomNumber === 1 || randomNumber === 7 ){
 		alert("Good News your eightball said " + eightBall + " so you get a  10 mins bonus for being a great chef.");
 		playerMealArray[1] -= 10;
 		playerMealArray[1] -= 15
